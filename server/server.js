@@ -12,6 +12,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+// Serve static files
+app.use(express.static("public"));
+
 // Import routes
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/product");
