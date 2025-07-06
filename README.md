@@ -1,48 +1,21 @@
-# 🛒 E-commerce API
+# E-commerce API
 
 A complete e-commerce API built with Node.js, Express, and MongoDB featuring authentication, product management, cart operations, and order processing.
 
-## 🚀 Live Demo
+## Live Demo
 
-- **API**: [Your Render URL]
-- **Frontend**: [Your Render URL] (same URL)
+- **API**: https://adaptnxtapi.onrender.com
+- **Frontend**: https://adaptnxtapi.onrender.com (same URL)
 
-## ✨ Features
+## Features
 
-- ✅ **Authentication & Authorization**
+- Authentication & Authorization - JWT-based security with role-based access
+- Product Management - CRUD operations with pagination and search
+- Cart Management - Add, update, remove items with stock validation
+- Order Management - Create orders from cart with status tracking
+- Extra Features - Pagination, search, filtering, comprehensive error handling
 
-  - JWT-based security
-  - Role-based access (customer/admin)
-  - Password hashing with bcrypt
-
-- ✅ **Product Management**
-
-  - CRUD operations for products
-  - Pagination and search functionality
-  - Category filtering
-  - Stock management
-
-- ✅ **Cart Management**
-
-  - Add/remove items from cart
-  - Update quantities
-  - Stock validation
-  - Automatic total calculation
-
-- ✅ **Order Management**
-
-  - Create orders from cart
-  - View customer orders
-  - Admin order management
-  - Order status updates
-
-- ✅ **Extra Features**
-  - Pagination for product listing
-  - Search by name/description/category
-  - Comprehensive error handling
-  - Input validation
-
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Backend**: Node.js, Express.js
 - **Database**: MongoDB with Mongoose
@@ -51,7 +24,7 @@ A complete e-commerce API built with Node.js, Express, and MongoDB featuring aut
 - **Frontend**: HTML, CSS, JavaScript
 - **Deployment**: Render
 
-## 📋 API Endpoints
+## API Endpoints
 
 ### Authentication
 
@@ -85,7 +58,7 @@ A complete e-commerce API built with Node.js, Express, and MongoDB featuring aut
 - `GET /api/orders/:id` - Get specific order (admin)
 - `PUT /api/orders/:id/status` - Update order status (admin)
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -130,7 +103,7 @@ A complete e-commerce API built with Node.js, Express, and MongoDB featuring aut
    - **API**: http://localhost:5000
    - **Frontend**: http://localhost:5000
 
-## 🧪 Testing
+## Testing
 
 ### Using the Frontend
 
@@ -151,48 +124,62 @@ curl -X POST http://localhost:5000/api/auth/register \
   -d '{"username":"test","email":"test@example.com","password":"password123","role":"customer"}'
 ```
 
-## 📁 Project Structure
+## Role-Based Access
 
+### Customer
+
+- View products
+- Manage shopping cart
+- Place orders
+- View order history
+
+### Admin
+
+- All customer features
+- Create, update, delete products
+- View all orders
+- Update order status
+
+## API Response Format
+
+### Success Response
+
+```json
+{
+  "message": "Success message",
+  "data": { ... }
+}
 ```
-├── server/
-│   ├── models/          # MongoDB schemas
-│   ├── controllers/     # Business logic
-│   ├── routes/          # API endpoints
-│   ├── middlewear/      # Authentication middleware
-│   ├── public/          # Frontend files
-│   └── server.js        # Main server file
-├── package.json         # Dependencies and scripts
-├── .gitignore          # Git ignore rules
-└── README.md           # Project documentation
+
+### Error Response
+
+```json
+{
+  "message": "Error description",
+  "error": "Detailed error message"
+}
 ```
 
-## 🔧 Environment Variables
+## Security Features
 
-| Variable     | Description               | Default  |
-| ------------ | ------------------------- | -------- |
-| `PORT`       | Server port               | `5000`   |
-| `MONGO_URI`  | MongoDB connection string | Required |
-| `JWT_SECRET` | Secret key for JWT tokens | Required |
+- JWT-based authentication
+- Password hashing with bcrypt
+- Role-based authorization
+- Input validation
+- Error handling
 
-## 🤝 Contributing
+## Deployment
 
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
+This project is deployed on Render:
 
-## 📄 License
+- **URL**: https://adaptnxtapi.onrender.com
+- **Database**: MongoDB Atlas
+- **Environment**: Production
+
+## License
 
 This project is licensed under the ISC License.
 
-## 🙏 Acknowledgments
-
-- Express.js for the web framework
-- MongoDB for the database
-- JWT for authentication
-- Render for hosting
-
 ---
 
-**Built with ❤️ for learning and development**
+Built with love for learning and development
